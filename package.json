@@ -1,0 +1,13 @@
+{
+  "name": "TwitchNameColorBot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "DerTyp7214",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "tmi.js": "^1.5.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "username": "<username in lowercase>",
+    "botname": "<username>",
+    "oauth": "<your oauth (https://twitchapps.com/tmi/)>",
+    "channels": [
+        "<channels>"
+    ]
+}
