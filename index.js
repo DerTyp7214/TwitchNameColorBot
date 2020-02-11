@@ -36,11 +36,19 @@ const colors = [
     'Firebrick'
 ]
 
+let disabled = false
+
 client.on('message', async (channel, tags, message, self) => {
-    if (tags.username === config.username) if (config.prime) try {
-        const hex = changeHue(tags.color, 30)
-        await client.say(channel, `/color ${hex}`)
-    } catch (e) {
-        console.log(e)
-    } else client.color(colors[Math.floor(Math.random() * colors.length)])
+    if (tags.username === config.username) {
+        if (!disabled) {
+            if (config.prime) try {
+                const hex = changeHue(tags.color, 30)
+                await client.say(channel, `/color ${hex}`)
+            } catch (e) {
+                console.log(e)
+            } else client.color(colors[Math.floor(Math.random() * colors.length)])
+        }
+        if (message.toLowerCase() === '?disable') disabled = true
+        if (message.toLowerCase() === '?enable') disabled = false
+    }
 })
