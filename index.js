@@ -34,5 +34,10 @@ const colors = [
 ]
 
 client.on('message', async (channel, tags, message, self) => {
-    if (tags.username === config.username) client.color(colors[Math.floor(Math.random() * colors.length)])
+    if (tags.username === config.username) if (config.prime) try {
+        const hex = changeHue(tags.color, 30)
+        await client.say(channel, `/color ${hex}`)
+    } catch (e) {
+        console.log(e)
+    } else client.color(colors[Math.floor(Math.random() * colors.length)])
 })
