@@ -1,5 +1,8 @@
 const tmi = require('tmi.js')
 const config = require('./config.json')
+const {
+    changeHue
+} = require('./colors')
 
 const client = new tmi.Client({
     connection: {
